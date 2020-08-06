@@ -18,9 +18,9 @@ CREATE TABLE role (
 );
 CREATE TABLE employee (
   id INT NOT NULL AUTO_INCREMENT,
-  first_name varchar(30) NOT NULL,
-  last_name varchar(30) NOT NULL,
-  role_id INT(10) NOT NULL,
+  firstname varchar(30) NOT NULL,
+  lastname varchar(30) NOT NULL,
+  roleid INT(10) NOT NULL,
   manager_id INT(10) NULL,
   PRIMARY KEY (id),
   FOREIGN KEY (role_id) REFERENCES role(id)
