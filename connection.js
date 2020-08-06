@@ -1,5 +1,4 @@
 var mysql = require("mysql");
-var inquirer = require("inquirer");
 
 // Database connection =========================
 var connection = mysql.createConnection({
