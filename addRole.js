@@ -1,41 +1,6 @@
-var inquirer = require("inquirer");
+//DEPENDENCIES==========
 var connection = require("./connection");
-
-function add(table) {
-  switch (table) {
-    case "department":
-      break;
-    case "role":
-      break;
-    case "employee":
-      break;
-  }
-}
-
-// function to add a department
-function addDepartment() {
-  const question = [
-    {
-      type: "input",
-      name: "depName",
-      message: "Department Name:",
-    },
-  ];
-  // prompt
-  inquirer.prompt(question).then((res) => {
-    var query = connection.query(
-      "INSERT INTO department SET ?",
-      {
-        name: res.depName,
-      },
-      function (err, res) {
-        if (err) throw err;
-        console.log("Department successfully added!\n");
-      }
-    );
-  });
-}
-
+var inquirer = require(inquirer);
 // function to add a role
 function addRole() {
   // get the list of available departments
@@ -99,8 +64,3 @@ function addRole() {
     });
   });
 }
-
-// function to add a an employee
-// function addEmployee() {}
-// // export add
-// module.exports = add;
