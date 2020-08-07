@@ -2,7 +2,7 @@ var connection = require("./connection");
 var inquirer = require("inquirer");
 const { fstat, lstat } = require("fs");
 
-function update(table) {
+function update() {
   var empPick;
   var rolePick;
   connection.query("SELECT firstname,lastname FROM employee", function (
@@ -83,5 +83,4 @@ function update(table) {
     });
   });
 }
-
-update("role");
+module.exports = update;

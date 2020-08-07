@@ -11,3 +11,5 @@ function view(table) {
     }
   );
 }
+
+module.exports = view;

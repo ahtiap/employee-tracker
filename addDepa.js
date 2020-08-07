@@ -23,8 +23,4 @@ function addDepartment() {
     );
   });
 }
-addDepartment();
-// function to add a an employee
-// function addEmployee() {}
-// // export add
-// module.exports = add;
+module.exports = addDepartment;

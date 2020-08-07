@@ -66,4 +66,4 @@ function addEmployee() {
     });
   });
 }
-addEmployee();
+module.exports = addEmployee;

@@ -1,6 +1,6 @@
 //DEPENDENCIES==========
 var connection = require("./connection");
-var inquirer = require(inquirer);
+var inquirer = require("inquirer");
 // function to add a role
 function addRole() {
   // get the list of available departments
@@ -64,3 +64,5 @@ function addRole() {
     });
   });
 }
+
+module.exports = addRole;
