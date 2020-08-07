@@ -1,14 +1,14 @@
 // DEPENDENCIES===========================
 var inquirer = require("inquirer");
-var addRole = require("./addRole");
-var addDepa = require("./addDepa");
-var addEmployee = require("./addEmployee");
-var update = require("./update");
-var view = require("./view");
-const connection = require("./connection");
-const addDepartment = require("./addDepa");
-
+var addRole = require("./utils/addRole");
+var addDepa = require("./utils/addDepa");
+var addEmployee = require("./utils/addEmployee");
+var update = require("./utils/update");
+var view = require("./utils/view");
+const connection = require("./utils/connection");
+const addDepartment = require("./utils/addDepa");
 function start() {
+  var choice;
   const question = [
     {
       type: "list",
@@ -27,34 +27,28 @@ function start() {
     },
   ];
   inquirer.prompt(question).then((res) => {
-    switch (res.choice) {
+    choice = res.choice;
+    switch (choice) {
       case "View Departments":
         view("department");
-        start();
         break;
       case "View Roles":
         view("role");
-        start();
         break;
       case "View Employees":
         view("employee");
-        start();
         break;
       case "Add Department":
-        addDepa();
-        start();
+        addDepartment();
         break;
       case "Add Role":
         addRole();
-        start();
         break;
       case "Add Employee":
         addEmployee();
-        start();
         break;
       case "Update employee role":
         update();
-        start();
         break;
       default:
         connection.end();
@@ -63,3 +57,4 @@ function start() {
   });
 }
 start();
+module.exports = start;

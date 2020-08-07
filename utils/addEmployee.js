@@ -11,8 +11,6 @@ function addEmployee() {
       var dep = dep.title;
       return dep;
     });
-    console.log(res);
-
     const question = [
       {
         type: "input",
@@ -58,7 +56,7 @@ function addEmployee() {
             },
             function (err, res) {
               if (err) throw err;
-              console.log("employee successfully added!\n");
+              console.log("Employee successfully added!\n");
             }
           );
         }

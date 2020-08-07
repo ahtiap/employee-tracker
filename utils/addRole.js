@@ -1,4 +1,5 @@
 //DEPENDENCIES==========
+var start = require("../start.js");
 var connection = require("./connection");
 var inquirer = require("inquirer");
 // function to add a role
@@ -14,7 +15,6 @@ function addRole() {
       var dep = dep.name;
       return dep;
     });
-    console.log(departments);
     const question = [
       {
         type: "input",
@@ -55,8 +55,7 @@ function addRole() {
             },
             function (err, res) {
               if (err) throw err;
-              console.log("Department successfully added!\n");
-              console.log(depId);
+              console.log("Role successfully added!\n");
             }
           );
         }

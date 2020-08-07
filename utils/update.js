@@ -64,16 +64,13 @@ function update() {
             ],
             function (err, res) {
               if (err) throw err;
-              console.log(res);
               empId = res[0].id;
-              console.log(empId);
               connection.query(
                 "UPDATE employee SET ? WHERE ?",
                 [{ role_id: rolePick }, { id: empId }],
                 function (err, res) {
                   if (err) throw err;
-                  console.log(rolePick);
-                  console.log(res);
+                  console.log("Employee's role updated!");
                 }
               );
             }
